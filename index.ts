@@ -18,3 +18,4 @@
  */
 
 export {AiCensor} from "./src/aicensor";
+export {NoProxy} from "./src/noproxy";
