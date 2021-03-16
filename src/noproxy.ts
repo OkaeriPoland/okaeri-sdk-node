@@ -1,4 +1,5 @@
 import axios, {AxiosInstance} from "axios";
+import {OkaeriClient} from "./helper";
 
 interface NoProxyAddressInfoGeneral {
     ip: string,
@@ -41,7 +42,8 @@ interface NoProxyConfig {
 
 export class NoProxy {
 
-    private client: AxiosInstance;
+    private axios: AxiosInstance;
+    private client: OkaeriClient;
 
     public constructor(config: NoProxyConfig = {}) {
 
@@ -50,15 +52,11 @@ export class NoProxy {
         const token = config.token || process.env.OKAERI_SDK_NOPROXY_TOKEN;
         const headers = {'Authorization': `Bearer ${token}`};
 
-        this.client = axios.create({baseURL, timeout, headers});
+        this.axios = axios.create({baseURL, timeout, headers});
+        this.client = new OkaeriClient(this.axios);
     }
 
     public getInfo(address: string): Promise<NoProxyAddressInfo> {
-        return new Promise((resolve, reject) => {
-            this.client
-                .get<NoProxyAddressInfo>(`/v1/${address}`)
-                .then(response => resolve(response.data))
-                .catch(error => reject(error.response ? error.response.data : error));
-        });
+        return this.client.get<NoProxyAddressInfo>(`/v1/${address}`);
     }
 }

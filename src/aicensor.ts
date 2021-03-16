@@ -1,4 +1,5 @@
 import axios, {AxiosInstance} from "axios";
+import {OkaeriClient} from "./helper";
 
 interface CensorPredictionInfoGeneral {
     swear: boolean,
@@ -33,7 +34,8 @@ interface AiCensorConfig {
 
 export class AiCensor {
 
-    private client: AxiosInstance;
+    private axios: AxiosInstance;
+    private client: OkaeriClient;
 
     public constructor(config: AiCensorConfig = {}) {
 
@@ -42,15 +44,11 @@ export class AiCensor {
         const token = config.token || process.env.OKAERI_SDK_AICENSOR_TOKEN;
         const headers = {'Token': token};
 
-        this.client = axios.create({baseURL, timeout, headers});
+        this.axios = axios.create({baseURL, timeout, headers});
+        this.client = new OkaeriClient(this.axios);
     }
 
     public getPrediction(phrase: string): Promise<CensorPredictionInfo> {
-        return new Promise((resolve, reject) => {
-            this.client
-                .post<CensorPredictionInfo>("/predict", {"phrase": phrase})
-                .then(response => resolve(response.data))
-                .catch(error => reject(error.response ? error.response.data : error));
-        });
+        return this.client.post<CensorPredictionInfo>("/predict", {"phrase": phrase});
     }
 }
