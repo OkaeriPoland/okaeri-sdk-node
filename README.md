@@ -2,7 +2,12 @@
 Currently supported services:
 - AI.Censor
 
-## Example usages
+## Installation
+```
+npm install okaeri-sdk
+```
+
+## Example usage
 ### AI.Censor
 ```javascript
 const OkaeriSdk = require('okaeri-sdk');
