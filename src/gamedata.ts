@@ -122,9 +122,7 @@ export class GameData {
         return new Promise((resolve, reject) => {
             this.axios
                 .get(`/v1/minecraftjava/${address}/favicon`, {responseType: 'arraybuffer'})
-                .then(response => {
-                    resolve(Buffer.from(response.data, 'binary'))
-                })
+                .then(response => resolve(Buffer.from(response.data, 'binary')))
                 .catch(error => reject(error.response ? error.response.data : error));
         });
     }
