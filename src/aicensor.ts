@@ -47,7 +47,7 @@ export class AiCensor {
             this.client
                 .post<CensorPredictionInfo>("/predict", {"phrase": phrase})
                 .then(response => resolve(response.data))
-                .catch(err => reject(err));
+                .catch(error => reject(error.response ? error.response.data : error));
         });
     }
 }
