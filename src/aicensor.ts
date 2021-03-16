@@ -25,14 +25,20 @@ interface CensorPredictionInfo {
     elapsed: CensorPredictionInfoElapsed;
 }
 
+interface AiCensorConfig {
+    baseURL?: string,
+    timeout?: number,
+    token?: string
+}
+
 export class AiCensor {
 
     private client: AxiosInstance;
 
-    public constructor(config: any = {}) {
+    public constructor(config: AiCensorConfig = {}) {
 
-        const baseURL = config.basePath || process.env.OKAERI_SDK_AICENSOR_BASE_PATH || "https://ai-censor.okaeri.eu";
-        const timeout = config.timeout || process.env.OKAERI_SDK_TIMEOUT || 5000;
+        const baseURL = config.baseURL || process.env.OKAERI_SDK_AICENSOR_BASE_PATH || "https://ai-censor.okaeri.eu";
+        const timeout = config.timeout || parseInt(process.env.OKAERI_SDK_TIMEOUT as string, 10) || 5000;
         const token = config.token || process.env.OKAERI_SDK_AICENSOR_TOKEN;
         const headers = {'Token': token};
 

@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublishOnly": "rm -rf ./dist && npm install && tsc",
-    "test": "tsc && node dist/test/runner.js"
+    "prepublishOnly": "npm install",
+    "prepare": "rm -rf ./dist && tsc",
+    "test": "npm install && node dist/test/runner.js"
   },
   "keywords": [],
   "author": "Dawid Sawicki <dawid@okaeri.eu>",
