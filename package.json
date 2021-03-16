@@ -1,10 +1,12 @@
 {
   "name": "okaeri-sdk",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Okaeri Services SDK",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "tsc && node test/runner.js"
+    "prepublish": "tsc",
+    "test": "tsc && node dist/test/runner.js"
   },
   "keywords": [],
   "author": "Dawid Sawicki <dawid@okaeri.eu>",
