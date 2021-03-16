@@ -4,7 +4,9 @@ Currently supported services:
 - [OK! No.Proxy](#ok-noproxy)
 - [OK! GameData](#ok-gamedata)
 
-Full documentation available on [wiki.okaeri.eu](https://wiki.okaeri.eu/pl/sdk/node).
+Full documentation available on [wiki.okaeri.eu](https://wiki.okaeri.eu/) in:
+- [Polish](https://wiki.okaeri.eu/pl/sdk/node)
+- [English](https://wiki.okaeri.eu/en/sdk/node)
 
 ## Installation
 ```
