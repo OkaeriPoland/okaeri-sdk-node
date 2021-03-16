@@ -1,6 +1,7 @@
 # Okaeri SDK for Node.js
 Currently supported services:
-- AI.Censor
+- OK! AI.Censor
+- OK! No.Proxy
 
 ## Installation
 ```
@@ -16,6 +17,21 @@ const aicensor = new OkaeriSdk.AiCensor({token: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXX
 aicensor.getPrediction("o cie k u r//w@!").then(response => {
     const swear = response.general.swear;
     console.log(swear ? "Tak, to jest wulgarne." : "Nie, to nie jest wulgarne");
+}).catch(error => {
+    console.log(error);
+});
+```
+
+### No.Proxy
+```javascript
+const OkaeriSdk = require('okaeri-sdk');
+const noproxy = new OkaeriSdk.NoProxy({token: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"});
+
+noproxy.getInfo("1.1.1.1").then(response => {
+    const proxy = response.risks.proxy;
+    const verify = response.suggestions.verify;
+    const block = response.suggestions.block;
+    console.log(`proxy: ${proxy}, verify: ${verify}, block: ${block}`);
 }).catch(error => {
     console.log(error);
 });
