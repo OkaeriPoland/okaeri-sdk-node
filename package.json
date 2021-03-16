@@ -1,0 +1,20 @@
+{
+  "name": "okaeri-sdk",
+  "version": "1.0.0",
+  "description": "Okaeri Services SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dawid Sawicki <dawid@okaeri.eu>",
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OkaeriPoland/okaeri-sdk-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OkaeriPoland/okaeri-sdk-node/issues"
+  },
+  "homepage": "https://github.com/OkaeriPoland/okaeri-sdk-node#readme"
+}
