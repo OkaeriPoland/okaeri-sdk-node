@@ -3,6 +3,7 @@ Currently supported services:
 - [OK! AI.Censor](#ok-aicensor)
 - [OK! No.Proxy](#ok-noproxy)
 - [OK! GameData](#ok-gamedata)
+- [OK! OpenVote](#ok-openvote)
 
 Full documentation available on [wiki.okaeri.eu](https://wiki.okaeri.eu/) in:
 - [Polish](https://wiki.okaeri.eu/pl/sdk/node)
@@ -62,3 +63,17 @@ gamedata.getMinecraftJavaInfo("1.1.1.1").then(response => {
 });
 ```
 
+### OK! OpenVote
+See full docs in: [Polish](https://wiki.okaeri.eu/pl/sdk/node#ok-openvote), [English](https://wiki.okaeri.eu/en/sdk/node#ok-openvote)
+```javascript
+const OkaeriSdk = require('okaeri-sdk');
+const openvote = new OkaeriSdk.OpenVote();
+
+openvote.getListVote("3fa85f64-5717-4562-b3fc-2c963f66afa6").then(response => {
+    const server = response.server;
+    const list = response.list;
+    console.log(`server=${server}, list=${list}`)    
+}).catch(error => {
+    console.log(error);
+});
+```
