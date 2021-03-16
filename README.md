@@ -42,7 +42,7 @@ noproxy.getInfo("1.1.1.1").then(response => {
 ```javascript
 const OkaeriSdk = require('okaeri-sdk');
 const gamedata = new OkaeriSdk.GameData();
-// const noproxy = new OkaeriSdk.GameData({token: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"}); // for paid users
+// const gamedata = new OkaeriSdk.GameData({token: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"}); // for paid users
 
 gamedata.getMinecraftJavaInfo("1.1.1.1").then(response => {
     const online = response.players.online;
