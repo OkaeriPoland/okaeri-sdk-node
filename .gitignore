@@ -1,5 +1,5 @@
 .idea/
 *.iml
-*.js
-dist/
+
 node_modules/
+dist/
