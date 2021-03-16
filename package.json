@@ -1,11 +1,11 @@
 {
   "name": "okaeri-sdk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Okaeri Services SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "tsc",
+    "prepublish": "rm -rf ./dist && npm install && tsc",
     "test": "tsc && node dist/test/runner.js"
   },
   "keywords": [],
