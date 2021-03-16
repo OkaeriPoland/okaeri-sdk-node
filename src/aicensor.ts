@@ -31,15 +31,12 @@ export class AiCensor {
 
     public constructor(config: any = {}) {
 
-        const basePath = config.basePath || process.env.OKAERI_SDK_AICENSOR_BASE_PATH || "https://ai-censor.okaeri.eu";
+        const baseURL = config.basePath || process.env.OKAERI_SDK_AICENSOR_BASE_PATH || "https://ai-censor.okaeri.eu";
         const timeout = config.timeout || process.env.OKAERI_SDK_TIMEOUT || 5000;
         const token = config.token || process.env.OKAERI_SDK_AICENSOR_TOKEN;
+        const headers = {'Token': token};
 
-        this.client = axios.create({
-            baseURL: basePath,
-            timeout: timeout,
-            headers: {'Token': token}
-        });
+        this.client = axios.create({baseURL, timeout, headers});
     }
 
     public getPrediction(phrase: string): Promise<CensorPredictionInfo> {
