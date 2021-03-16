@@ -58,10 +58,8 @@ export class OpenVote {
 
         const baseURL = config.baseURL || process.env.OKAERI_SDK_OPENVOTE_BASE_PATH || "https://openvote-api.okaeri.eu";
         const timeout = config.timeout || parseInt(process.env.OKAERI_SDK_TIMEOUT as string, 10) || 5000;
-        const token = config.token || process.env.OKAERI_SDK_OPENVOTE_TOKEN || "";
-        const headers = token ? {'Authorization': `Bearer ${token}`} : {};
 
-        this.axios = axios.create({baseURL, timeout, headers});
+        this.axios = axios.create({baseURL, timeout});
         this.client = new OkaeriClient(this.axios);
     }
 
