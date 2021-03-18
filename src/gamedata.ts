@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import axios, {AxiosInstance, AxiosResponse} from "axios";
+import axios, {AxiosInstance} from "axios";
 import {OkaeriClient} from "./helper";
 
 interface ServerRealAddress {
