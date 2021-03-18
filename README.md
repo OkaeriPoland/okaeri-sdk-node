@@ -52,7 +52,7 @@ const OkaeriSdk = require('okaeri-sdk');
 const gamedata = new OkaeriSdk.GameData();
 // const gamedata = new OkaeriSdk.GameData({token: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"}); // for paid users
 
-gamedata.getMinecraftJavaInfo("1.1.1.1").then(response => {
+gamedata.getMinecraftJavaInfo("hypixel.net").then(response => {
     const online = response.players.online;
     const max = response.players.max;
     const normalizedMotd = response.motd.normalized;
