@@ -89,7 +89,7 @@ export class OpenVote {
     }
 
     public postListSuccess(listVoteId: string, key: string): Promise<ListVote> {
-        return this.client.post<ListVote>(`/v1/list/vote/error/${listVoteId}`, {key})
+        return this.client.post<ListVote>(`/v1/list/vote/success/${listVoteId}`, {key})
     }
 
     public postListError(listVoteId: string, key: string, errorCode: string, errorMessage: string): Promise<ListVote> {
