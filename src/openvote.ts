@@ -29,7 +29,7 @@ interface ListVote {
     game: string,
     lang: string,
     background: string,
-    backgroundType: string,
+    background_type: string,
     identifiers: VoteIdentifier[],
     identifiers_hash: string
 }
