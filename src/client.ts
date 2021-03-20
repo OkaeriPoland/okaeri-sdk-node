@@ -23,6 +23,7 @@ export class OkaeriClient {
 
     constructor(client: AxiosInstance) {
         this.client = client;
+        this.client.defaults.headers["User-Agent"] = "okaeri-sdk/1 (node)"
     }
 
     public get<T>(url: string): Promise<T> {
