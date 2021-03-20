@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import axios, {AxiosInstance} from "axios";
-import {OkaeriClient} from "./helper";
+import {OkaeriClient} from "./client";
 
 interface VoteIdentifier {
     type: string,
