@@ -1,4 +1,12 @@
 # Okaeri SDK for Node.js
+
+![License](https://img.shields.io/github/license/OkaeriPoland/okaeri-sdk-node)
+![Total lines](https://img.shields.io/tokei/lines/github/OkaeriPoland/okaeri-sdk-node)
+![Repo size](https://img.shields.io/github/repo-size/OkaeriPoland/okaeri-sdk-node)
+![npm](https://img.shields.io/npm/v/okaeri-sdk)
+![Contributors](https://img.shields.io/github/contributors/OkaeriPoland/okaeri-sdk-node)
+[![Discord](https://img.shields.io/discord/589089838200913930)](https://discord.gg/hASN5eX)
+
 Currently supported services:
 - [OK! AI.Censor](#ok-aicensor)
 - [OK! No.Proxy](#ok-noproxy)
