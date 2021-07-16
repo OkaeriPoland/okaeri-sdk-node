@@ -12,17 +12,17 @@ interface ListVote {
     game: string,
     lang: string,
     background: string,
-    background_type: string,
+    backgroundType: string,
     identifiers: VoteIdentifier[],
-    identifiers_hash: string
+    identifiersHash: string
 }
 
 interface ServerVoteStartRequest {
     list: string,
     stats_id: string,
-    single_cooldown: number,
-    general_cooldown: number,
-    pass_identifiers: boolean,
+    singleCooldown: number,
+    generalCooldown: number,
+    passIdentifiers: boolean,
     identifiers: VoteIdentifier[],
     server: string,
     game: string,
@@ -40,7 +40,7 @@ interface ServerVoteCheckResult {
 
 interface ServerVote {
     url: string,
-    server_vote_id: string
+    serverVoteId: string
 }
 
 interface OpenVoteConfig {
